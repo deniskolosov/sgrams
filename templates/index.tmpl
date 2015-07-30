@@ -1,3 +1,29 @@
-﻿<html>
-<h1>{{ .title }}</h1>
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery File Upload Example</title>
+</head>
+<body>
+<input id="fileupload" type="file" name="files[]" data-url="http://127.0.0.1:8080/api/v1/post" multiple>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="static/js/vendor/jquery.ui.widget.js"></script>
+<script src="static/js/jquery.iframe-transport.js"></script>
+<script src="static/js/jquery.fileupload.js"></script>
+<script>
+$(function () {
+		$('#fileupload').fileupload({
+			        dataType: 'json',
+				done: function (data) {
+				//$.each(data.results.files, function (index, file) {
+				//	                $('<p/>').text(file.name).appendTo(document.body);
+				console.log(data.result)			            
+					},
+				        
+				});
+				    
+			});
+
+</script>
+</body> 
 </html>
